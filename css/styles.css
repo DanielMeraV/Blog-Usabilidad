@@ -137,7 +137,7 @@ footer p{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--color-secundario);
+    background-color: var(--color-primario);
     color: var(--color-texto-blanco);
     border: none;
     padding: 0.5rem;
