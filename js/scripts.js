@@ -69,3 +69,34 @@ function updateNavButtons() {
 // Llama a la función cuando la página se carga y cuando se redimensiona la ventana
 document.addEventListener('DOMContentLoaded', updateNavButtons);
 window.addEventListener('resize', updateNavButtons);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('producto-modal');
+    const closeButton = modal.querySelector('.close-button');
+
+    document.querySelectorAll('.producto-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const nombre = this.querySelector('p').textContent;
+            const imagenSrc = this.querySelector('.img-frente').src;
+            const descripcion = 'Descripción del producto'; // Agregar descripción según sea necesario
+            const precio = '$20'; // Agregar precio según sea necesario
+
+            document.getElementById('modal-producto-nombre').textContent = nombre;
+            document.getElementById('modal-producto-imagen').src = imagenSrc;
+            document.getElementById('modal-producto-descripcion').textContent = descripcion;
+            document.getElementById('modal-producto-precio').textContent = precio;
+
+            modal.classList.remove('hidden');
+        });
+    });
+
+    closeButton.addEventListener('click', function() {
+        modal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+});

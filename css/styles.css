@@ -146,6 +146,7 @@ footer p{
 }
 
 .images-change img {
+    transition: 50%;
     max-height: 100%;
     object-fit: contain;
     object-position: center;
@@ -205,3 +206,53 @@ footer p{
 .img-frente {
     opacity: 1;
 }
+
+.img-detras {
+    opacity: 0;
+}
+
+/*Estilo modal*/
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 600px; /* Ajusta el tamaño del modal según tus necesidades */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    max-height: 40rem; /* Ajusta el valor según el tamaño deseado */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionar */
+    display: block;
+    margin: 0 auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
