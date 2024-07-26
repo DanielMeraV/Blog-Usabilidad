@@ -152,6 +152,26 @@ footer p{
     object-position: center;
 }
 
+.juegos .images-change img{
+    object-fit: cover !important;
+}
+
+.images-change::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Fondo transparente por defecto */
+    transition: background 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.images-change:hover::after {
+    background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que se puede hacer clic */
+}
+
 .producto-item {
     background-color: var(--color-secundario);
     color: var(--color-texto-blanco);
@@ -189,6 +209,22 @@ footer p{
 .nav-button.right {
     right: 0;
     height: calc(100% + 1rem);
+}
+
+.nav-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Fondo transparente por defecto */
+    transition: background 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.nav-button:hover::after {
+    background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que se puede hacer clic */
 }
 
 .nav-button.hidden {
