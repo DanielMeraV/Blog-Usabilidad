@@ -46,3 +46,26 @@ function toggleImages() {
 toggleImages();
 
 
+function updateNavButtons() {
+    const containers = document.querySelectorAll('.producto-grid');
+    
+    containers.forEach(container => {
+        const leftButton = container.parentElement.querySelector('.nav-button.left');
+        const rightButton = container.parentElement.querySelector('.nav-button.right');
+
+        // Verifica si el contenedor se puede desplazar horizontalmente
+        if (container.scrollWidth > container.clientWidth) {
+            // Muestra los botones si el contenido se puede desplazar
+            leftButton.classList.remove('hidden');
+            rightButton.classList.remove('hidden');
+        } else {
+            // Oculta los botones si el contenido no se puede desplazar
+            leftButton.classList.add('hidden');
+            rightButton.classList.add('hidden');
+        }
+    });
+}
+
+// Llama a la función cuando la página se carga y cuando se redimensiona la ventana
+document.addEventListener('DOMContentLoaded', updateNavButtons);
+window.addEventListener('resize', updateNavButtons);
