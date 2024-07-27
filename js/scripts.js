@@ -66,6 +66,7 @@ function updateNavButtons() {
     });
 }
 
+// Modal
 // Llama a la función cuando la página se carga y cuando se redimensiona la ventana
 document.addEventListener('DOMContentLoaded', updateNavButtons);
 window.addEventListener('resize', updateNavButtons);
@@ -99,4 +100,29 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.classList.add('hidden');
         }
     });
+
+    window.addEventListener("keydown", function(event) {
+        if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+            modal.classList.add('hidden');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Reiniciar el foco al principio
+    const hiddenFocus = document.querySelector('.hidden-focus');
+    hiddenFocus.addEventListener('focus', () => {
+        document.querySelector('header h1').focus();
+    });
+
+    // Hacer elementos clicables con Enter o Espacio
+    document.querySelectorAll('[role="button"]').forEach(item => {
+        item.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                item.click();
+            }
+        });
+    });
+
 });
