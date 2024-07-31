@@ -292,3 +292,50 @@ footer p{
     display: none;
 }
 
+/* Estilos para la sección del autor */
+#autor {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-blanco);
+    padding: 2rem;
+    text-align: center;
+}
+
+#autor h2 {
+    font-family: var(--fuente-secundaria);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.autor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.autor-container img {
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: 150px; /* Asegúrate de que la altura coincida con el ancho para mantener la proporción */
+    border-radius: 50%; /* Recorte circular */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionar */
+}
+
+.autor-info {
+    text-align: left;
+}
+
+.autor-info p {
+    margin: 0.5rem 0;
+}
+
+.autor-info p a {
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--color-texto-blanco);
+}
+
+.autor-info p a:hover {
+    border-bottom-style: solid;
+}
+
